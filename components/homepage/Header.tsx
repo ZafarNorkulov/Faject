@@ -11,7 +11,6 @@ const Header = () => {
 
   const [category, setCategory] = useState<any[]>([]);
   const [activeId, setActiveId] = useState(category[0]?.id || null);
-  console.log(activeId);
   useEffect(() => {
     (async () => {
       try {

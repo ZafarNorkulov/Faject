@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Title from "../Title";
 import WhiteButton from "../buttons/WhiteButton";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import api from "@/lib/api";
 
