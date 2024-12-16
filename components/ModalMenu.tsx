@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import WhiteButton from "./buttons/WhiteButton";
 import React, { useEffect, useState } from "react";

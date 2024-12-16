@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Title from "../Title";
 import WhiteButton from "../buttons/WhiteButton";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import api from "@/lib/api";
 
