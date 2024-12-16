@@ -9,7 +9,7 @@ import Services from "@/components/homepage/Services";
 import Tools from "@/components/homepage/Tools";
 import Result from "@/components/Result";
 import AOS from "aos";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {

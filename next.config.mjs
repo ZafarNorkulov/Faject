@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: { ignoreDuringBuilds: true },
+  eslint: {
+    ignoreDuringBuilds: false, // ESLint xatolarini build vaqtida aniqlash
+  },
+  typescript: {
+    ignoreBuildErrors: false, // TypeScript xatolarini aniqlash
+  },
+  reactStrictMode: true,
 
   images: {
     unoptimized: true, // Disable image optimization
