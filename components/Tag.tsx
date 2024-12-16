@@ -7,7 +7,7 @@ const Tag = ({
 }: {
   text: string | undefined;
   active?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 }) => {
   return (
     <p
