@@ -39,7 +39,7 @@ const ModalMenu = ({
     (async () => {
       try {
         const response = await api.get("/category");
-        setData(response.data);
+        setData(response?.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
