@@ -12,8 +12,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   useEffect(() => {
-    const storedLanguage = localStorage.getItem("language") || "uz"; // Default to 'uz' if no language is stored
-    i18n.changeLanguage(storedLanguage);
+    if (typeof window !== "undefined") {
+      const storedLanguage = localStorage.getItem("language") || "uz"; // Default to 'uz' if no language is stored
+      i18n.changeLanguage(storedLanguage);
+    }
   }, []);
   return (
     <html lang="ru">
