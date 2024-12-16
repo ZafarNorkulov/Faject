@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://faject.vercel.app
+
+# Sitemaps
+Sitemap: https://faject.vercel.app/sitemap.xml
