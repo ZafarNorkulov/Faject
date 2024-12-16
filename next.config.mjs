@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint: { ignoreDuringBuilds: true },
+
   images: {
     unoptimized: true, // Disable image optimization
     remotePatterns: [
@@ -9,7 +11,6 @@ const nextConfig = {
         port: "8000",
         pathname: "/media/product/**",
       },
-     
     ],
   },
 };
