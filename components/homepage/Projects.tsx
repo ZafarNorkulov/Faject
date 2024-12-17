@@ -32,7 +32,7 @@ const Projects = ({
       try {
         const response = await api.get("/project/category/");
         setProjects(response?.data);
-        setActiveProjectId(response?.data.length);
+        setActiveProjectId(response?.data[0]?.id || null);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -40,17 +40,19 @@ const Projects = ({
   }, []);
   useEffect(() => {
     (async () => {
+      if (!activeProjectId) return;
       try {
         let url = "/project/";
         if (activeProjectId !== projects.length)
           url = `/project/category/${activeProjectId}`;
+
         const response = await api.get(url);
         setAllProjects(response?.data?.results);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     })();
-  }, [activeProjectId, projects]);
+  }, [activeProjectId, projects?.length]);
 
   const handleTagClick = (id: number) => {
     setActiveProjectId(id);
@@ -71,7 +73,7 @@ const Projects = ({
           </div>
         )}
         <div className="mb-11 flex flex-wrap gap-4 max-md:mb-6">
-          {projects?.map((tool) => (
+          {(projects || [])?.map((tool) => (
             <p
               key={tool?.id}
               onClick={() => handleTagClick(tool?.id)}
