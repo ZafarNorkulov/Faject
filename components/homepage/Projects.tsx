@@ -5,6 +5,7 @@ import WhiteButton from "../buttons/WhiteButton";
 import { useEffect, useState } from "react";
 import api from "@/lib/api";
 import Image from "next/image";
+import Blogbg from "@/public/images/blogBg.png"
 
 interface ProItems {
   id: number;
@@ -101,7 +102,7 @@ const Projects = ({
                   width={500}
                   height={300}
                   alt="projects"
-                  src={project?.image ? project.image : "/placeholder.jpg"}
+                  src={project?.image ? project.image : Blogbg}
                   className="size-full object-cover transition-transform duration-300 hover:scale-110"
                 />
               </Link>
