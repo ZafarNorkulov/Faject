@@ -1,3 +1,4 @@
+import MainLayout from "@/components/MainLayout";
 import "./globals.css";
 import React from "react";
 
@@ -6,7 +7,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
   return (
     <html lang="ru">
       <head>
@@ -36,7 +36,7 @@ export default function RootLayout({
         <link rel="icon" href="/icons/favicon.svg" />
       </head>
       <body className="bg-black text-white">
-        {children}
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );

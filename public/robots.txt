@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://faject.vercel.app
+Host: http://api.faject.com/
 
 # Sitemaps
-Sitemap: https://faject.vercel.app/sitemap.xml
+Sitemap: http://api.faject.com/sitemap.xml
