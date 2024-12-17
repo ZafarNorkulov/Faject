@@ -1,22 +1,12 @@
-"use client";
 import "./globals.css";
-import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import i18n from "@/i18n";
-import { I18nextProvider } from "react-i18next";
+import React from "react";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedLanguage = localStorage.getItem("language") || "uz"; // Default to 'uz' if no language is stored
-      i18n.changeLanguage(storedLanguage);
-    }
-  }, []);
+  
   return (
     <html lang="ru">
       <head>
@@ -46,9 +36,7 @@ export default function RootLayout({
         <link rel="icon" href="/icons/favicon.svg" />
       </head>
       <body className="bg-black text-white">
-        <Navbar />
-        <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
-        <Footer />
+        {children}
       </body>
     </html>
   );
