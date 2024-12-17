@@ -50,13 +50,13 @@ const Projects = ({
     })();
   }, [activeProjectId, projects?.length]);
 
-  const handleTagClick = (id: number) => {
-    setActiveProjectId(id);
-  };
-  const displayedProjects =
-    number && allProjects.length > 0
-      ? allProjects?.slice(0, number)
-      : allProjects;
+  // const handleTagClick = (id: number) => {
+  //   setActiveProjectId(id);
+  // };
+  // const displayedProjects =
+  //   number && allProjects.length > 0
+  //     ? allProjects?.slice(0, number)
+  //     : allProjects;
   return <></>;
 };
 
