@@ -7,10 +7,10 @@ import api from "@/lib/api";
 import Image from "next/image";
 import Blogbg from "@/public/images/blogBg.png";
 
-// interface ProItems {
-//   id: number;
-//   name: string;
-// }
+interface ProItems {
+  id: number;
+  name: string;
+}
 interface AllProject {
   id: number;
   name: string;
@@ -25,23 +25,21 @@ const Projects = ({
   seeAll?: boolean;
   number?: number;
 }) => {
-  // const [projects, setProjects] = useState<ProItems[]>([]);
+  const [projects, setProjects] = useState<ProItems[]>([]);
   const [allProjects, setAllProjects] = useState<AllProject[]>([]);
   const [activeProjectId, setActiveProjectId] = useState<number | null>(null);
+
   useEffect(() => {
-    setActiveProjectId(1); // Set the initial project ID only once
+    (async () => {
+      try {
+        const response = await api.get("/project/category/");
+        setProjects(response?.data);
+        setActiveProjectId(response?.data[0]?.id || null);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    })();
   }, []);
-  // useEffect(() => {
-  //   (async () => {
-  //     try {
-  //       const response = await api.get("/project/category/");
-  //       setProjects(response?.data || []);
-  //       setActiveProjectId(response?.data[0]?.id || null);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   })();
-  // }, []);
 
   useEffect(() => {
     (async () => {
@@ -56,9 +54,9 @@ const Projects = ({
     })();
   }, [activeProjectId]);
 
-  // const handleTagClick = (id: number) => {
-  //   setActiveProjectId(id);
-  // };
+  const handleTagClick = (id: number) => {
+    setActiveProjectId(id);
+  };
 
   const displayedProjects =
     number && allProjects.length > 0
@@ -76,8 +74,8 @@ const Projects = ({
             <Title text="наши проекты" center={false} />
           </div>
         )}
-        {/* <div className="mb-11 flex flex-wrap gap-4 max-md:mb-6">
-          {(projects || []).map((tool) => (
+        <div className="mb-11 flex flex-wrap gap-4 max-md:mb-6">
+          {projects.map((tool) => (
             <p
               key={tool?.id}
               onClick={() => handleTagClick(tool?.id)}
@@ -90,7 +88,7 @@ const Projects = ({
               {tool?.name}
             </p>
           ))}
-        </div> */}
+        </div>
       </div>
       {displayedProjects?.length > 0 && (
         <div className="grid grid-cols-3 overflow-hidden max-md:grid-cols-1">
