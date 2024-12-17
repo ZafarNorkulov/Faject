@@ -57,9 +57,7 @@ const Projects = ({
     number && allProjects.length > 0
       ? allProjects?.slice(0, number)
       : allProjects;
-  return (
-   <></>
-  );
+  return <></>;
 };
 
 export default Projects;
