@@ -8,6 +8,7 @@ const MainLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <>
       <Navbar />
+      {children}
       <Footer />
     </>
   );
