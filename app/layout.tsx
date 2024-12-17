@@ -1,5 +1,4 @@
 import React from "react";
-import MainLayout from "@/components/MainLayout";
 import "./globals.css";
 
 export default function RootLayout({
@@ -36,7 +35,7 @@ export default function RootLayout({
         <link rel="icon" href="/icons/favicon.svg" />
       </head>
       <body className="bg-black text-white">
-        <MainLayout>{children}</MainLayout>
+        {children}
       </body>
     </html>
   );
