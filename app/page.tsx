@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <div className="size-full overflow-x-hidden">
-      <Header />
+      {/* <Header />
       <Projects number={5} />
       <Services />
       <Tools />
@@ -28,7 +28,7 @@ export default function Home() {
       <Faqs />
       <News />
       <Result />
-      <CookiePopUp />
+      <CookiePopUp /> */}
     </div>
   );
 }
