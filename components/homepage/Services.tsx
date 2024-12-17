@@ -47,19 +47,24 @@ const Services = () => {
           </div>
         ))}
 
-        <div className="relative col-span-2 rounded-[20px]  bg-gradient-primary px-8 py-6 max-md:hidden">
-          <Title text="ВСЕ УСЛУГИ" />
-          <p className="text-xl max-md:mt-2 max-md:grow max-md:text-base">
-            Ознакомьтесь с полным спектром услуг нашего агенства. Мы можем
-            предоставить полную поддержку для диджитал бизнеса на всех стадиях.
-            Оказываем услуги в кратчайшие сроки и с соблюдением качества.
-          </p>
+        <div className="relative col-span-2 rounded-[20px] bg-gradient-primary px-8 py-6 max-md:hidden">
+          <div>
+            <Title text="ВСЕ УСЛУГИ" />
+            <p className="text-xl max-md:mt-2 max-md:grow max-md:text-base">
+              Ознакомьтесь с полным спектром услуг нашего агенства. Мы можем
+              предоставить полную поддержку для диджитал бизнеса на всех
+              стадиях. Оказываем услуги в кратчайшие сроки и с соблюдением
+              качества.
+            </p>
+          </div>
 
-          <div
-            onClick={() => router.push("/services")}
-            className="absolute bottom-8 right-8 h-12 w-[180px]"
-          >
-            <WhiteButton text="СМОТРЕТЬ" bgColor={false} img />
+          <div className="w-full">
+            <div
+              onClick={() => router.push("/services")}
+              className="h-12 w-[180px] ml-auto"
+            >
+              <WhiteButton text="СМОТРЕТЬ" bgColor={false} img />
+            </div>
           </div>
         </div>
       </div>
@@ -70,11 +75,14 @@ const Services = () => {
           предоставить полную поддержку для диджитал бизнеса на всех стадиях.
           Оказываем услуги в кратчайшие сроки и с соблюдением качества.
         </p>
+        <div className="w-full">
+
         <div
           onClick={() => router.push("/services")}
-          className="mt-6 h-12 w-[180px]"
+          className="mt-6 h-12 w-[180px] ml-auto"
         >
           <WhiteButton text="СМОТРЕТЬ" bgColor={false} img />
+        </div>
         </div>
       </div>
     </div>
