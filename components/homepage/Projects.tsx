@@ -28,7 +28,9 @@ const Projects = ({
   // const [projects, setProjects] = useState<ProItems[]>([]);
   const [allProjects, setAllProjects] = useState<AllProject[]>([]);
   const [activeProjectId, setActiveProjectId] = useState<number | null>(null);
-  setActiveProjectId(1)
+  useEffect(() => {
+    setActiveProjectId(1); // Set the initial project ID only once
+  }, []);
   // useEffect(() => {
   //   (async () => {
   //     try {
