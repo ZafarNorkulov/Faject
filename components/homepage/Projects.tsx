@@ -1,22 +1,6 @@
 "use client";
-import Link from "next/link";
 import Title from "../Title";
-import WhiteButton from "../buttons/WhiteButton";
-import { useEffect, useState } from "react";
-import api from "@/lib/api";
-import Image from "next/image";
-import Blogbg from "@/public/images/blogBg.png"
 
-interface ProItems {
-  id: number;
-  name: string;
-}
-interface AllProject {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-}
 
 const Projects = ({
   seeAll,
@@ -25,43 +9,43 @@ const Projects = ({
   seeAll?: boolean;
   number?: number;
 }) => {
-  const [projects, setProjects] = useState<ProItems[]>([]);
-  const [allProjects, setAllProjects] = useState<AllProject[]>([]);
-  const [activeProjectId, setActiveProjectId] = useState<number | null>(null);
+  // const [projects, setProjects] = useState<ProItems[]>([]);
+  // const [allProjects, setAllProjects] = useState<AllProject[]>([]);
+  // const [activeProjectId, setActiveProjectId] = useState<number | null>(null);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await api.get("/project/category/");
-        setProjects(response?.data || []);
-        setActiveProjectId(response?.data[0]?.id || null);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const response = await api.get("/project/category/");
+  //       setProjects(response?.data || []);
+  //       setActiveProjectId(response?.data[0]?.id || null);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   })();
+  // }, []);
 
-  useEffect(() => {
-    (async () => {
-      if (!activeProjectId) return; // Guard clause to avoid invalid API calls
-      try {
-        const url = `/project/category/${activeProjectId}`;
-        const response = await api.get(url);
-        setAllProjects(response?.data?.results || []);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    })();
-  }, [activeProjectId]);
+  // useEffect(() => {
+  //   (async () => {
+  //     if (!activeProjectId) return; // Guard clause to avoid invalid API calls
+  //     try {
+  //       const url = `/project/category/${activeProjectId}`;
+  //       const response = await api.get(url);
+  //       setAllProjects(response?.data?.results || []);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   })();
+  // }, [activeProjectId]);
 
-  const handleTagClick = (id: number) => {
-    setActiveProjectId(id);
-  };
+  // const handleTagClick = (id: number) => {
+  //   setActiveProjectId(id);
+  // };
 
-  const displayedProjects =
-    number && allProjects.length > 0
-      ? allProjects?.slice(0, number)
-      : allProjects;
+  // const displayedProjects =
+  //   number && allProjects.length > 0
+  //     ? allProjects?.slice(0, number)
+  //     : allProjects;
 
   return (
     <div
@@ -74,7 +58,7 @@ const Projects = ({
             <Title text="наши проекты" center={false} />
           </div>
         )}
-        <div className="mb-11 flex flex-wrap gap-4 max-md:mb-6">
+        {/* <div className="mb-11 flex flex-wrap gap-4 max-md:mb-6">
           {(projects || []).map((tool) => (
             <p
               key={tool?.id}
@@ -88,9 +72,9 @@ const Projects = ({
               {tool?.name}
             </p>
           ))}
-        </div>
+        </div> */}
       </div>
-      {displayedProjects?.length > 0 && (
+      {/* {displayedProjects?.length > 0 && (
         <div className="grid grid-cols-3 overflow-hidden max-md:grid-cols-1">
           {displayedProjects.map((project) => (
             <div
@@ -125,7 +109,7 @@ const Projects = ({
             </div>
           )}
         </div>
-      )}
+      )} */}
     </div>
   );
 };
