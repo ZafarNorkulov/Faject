@@ -1,10 +1,6 @@
 "use client";
-import Link from "next/link";
-import Title from "../Title";
-import WhiteButton from "../buttons/WhiteButton";
 import { useEffect, useState } from "react";
 import api from "@/lib/api";
-import Image from "next/image";
 
 interface ProItems {
   id: number;
