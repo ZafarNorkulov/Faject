@@ -1,9 +1,10 @@
-"use client"
+"use client";
 import Link from "next/link";
 import Title from "../Title";
 import WhiteButton from "../buttons/WhiteButton";
 import { useEffect, useState } from "react";
 import api from "@/lib/api";
+import Image from "next/image";
 
 interface ProItems {
   id: number;
@@ -70,30 +71,30 @@ const Projects = ({
           </div>
         )}
         <div className="mb-11 flex flex-wrap gap-4 max-md:mb-6">
-          {projects.map((tool) => (
+          {projects?.map((tool) => (
             <p
-              key={tool.id}
-              onClick={() => handleTagClick(tool.id)}
+              key={tool?.id}
+              onClick={() => handleTagClick(tool?.id)}
               className={`cursor-pointer rounded-full border px-6 py-2 text-sm uppercase text-white hover:border-primary hover:bg-primary hover:opacity-80 max-md:text-sm ${
-                activeProjectId === tool.id
+                activeProjectId === tool?.id
                   ? "border-primary bg-primary"
                   : "border-[#FFFFFF33] bg-transparent"
               }`}
             >
-              {tool.name}
+              {tool?.name}
             </p>
           ))}
         </div>
       </div>
-      {displayedProjects.length > 0 && (
+      {displayedProjects?.length > 0 && (
         <div className="grid grid-cols-3 overflow-hidden max-md:grid-cols-1">
           {displayedProjects.map((project) => (
             <div
-              key={project.id}
+              key={project?.id}
               className="col-span-1 h-[300px] overflow-hidden max-md:h-max"
             >
-              <Link href={`/project/${project.id}`}>
-                <img
+              <Link href={`/project/${project?.id}`}>
+                <Image
                   width={500}
                   height={300}
                   alt="projects"
