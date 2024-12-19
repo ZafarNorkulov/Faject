@@ -32,13 +32,15 @@ const Header = () => {
             data-aos="fade-right"
           >
             <div className="flex gap-4 max-md:overflow-x-scroll">
-              {category?.map((item) => (
-                <Tag
-                  text={item?.name}
-                  key={item?.id}
-                  active={item?.id === activeId}
-                  onClick={() => setActiveId(item?.id)}
-                />
+              {category?.map((item, idx) => (
+                <Link href={"/project"} key={idx}>
+                  <Tag
+                    text={item?.name}
+                    key={item?.id}
+                    active={item?.id === activeId}
+                    onClick={() => setActiveId(item?.id)}
+                  />
+                </Link>
               ))}
             </div>
             <div>
