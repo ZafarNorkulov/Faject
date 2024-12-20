@@ -43,7 +43,7 @@ export default function Page({ params: { id } }: any) {
     (async () => {
       try {
         const response = await api.get("/blog/" + id);
-        setBlog(response.data.product[0]);
+        setBlog(response.data.serializer);
       } catch (error) {
         router.back();
         console.error("Error fetching data:", error);
